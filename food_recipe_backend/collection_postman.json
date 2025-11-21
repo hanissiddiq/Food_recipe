@@ -1,0 +1,89 @@
+{
+  "info": {
+    "name": "API Resep Masakan",
+    "_postman_id": "a1b2c3d4",
+    "description": "Collection API untuk aplikasi resep masakan menggunakan Laravel 12",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Recipes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/recipes",
+          "host": ["{{base_url}}"],
+          "path": ["api", "recipes"]
+        }
+      }
+    },
+    {
+      "name": "Get Recipe By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/recipes/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "recipes", "1"]
+        }
+      }
+    },
+    {
+      "name": "Create Recipe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "title", "value": "Nasi Goreng Spesial", "type": "text" },
+            { "key": "ingredients", "value": "Nasi, telur, kecap", "type": "text" },
+            { "key": "steps", "value": "1. Panaskan minyak\n2. Masukkan telur\n3. Masukkan nasi dan kecap", "type": "text" },
+            { "key": "image", "type": "file" }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/api/recipes",
+          "host": ["{{base_url}}"],
+          "path": ["api", "recipes"]
+        }
+      }
+    },
+    {
+      "name": "Update Recipe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "_method", "value": "PUT", "type": "text" },
+            { "key": "title", "value": "Update Nasi Goreng", "type": "text" },
+            { "key": "ingredients", "value": "Nasi, telur, kecap manis", "type": "text" },
+            { "key": "steps", "value": "Update step masak", "type": "text" },
+            { "key": "image", "type": "file" }
+          ]
+        },
+        "url": {
+          "raw": "{{base_url}}/api/recipes/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "recipes", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Recipe",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/recipes/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "recipes", "1"]
+        }
+      }
+    }
+  ]
+}
